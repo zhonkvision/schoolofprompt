@@ -10,6 +10,8 @@
   <a href="https://schoolofprompt.vercel.app">
     <img src="https://img.shields.io/badge/🟢_LIVE_DEMO-Access_Application-34d399?style=for-the-badge" alt="Live Demo" />
   </a>
+  <br/><br/>
+  <img src="public/images/reference.png" alt="PromptShare UI Reference" width="800" style="border-radius: 8px; box-shadow: 0 0 20px rgba(0,255,255,0.1);" />
 </div>
 
 ---
@@ -17,10 +19,6 @@
 ## ⚡ Overview
 
 PromptShare (aka School of Prompt) is a highly optimized, Cyber-HUD themed web application for instantly saving, sharing, and tracking plain-text data (like AI prompts or code snippets).
-
-<div align="center">
-  <img src="public/images/reference.png" alt="PromptShare UI Reference" width="800" style="border-radius: 8px; box-shadow: 0 0 20px rgba(0,255,255,0.1);" />
-</div>
 
 Engineered with performance and security in mind, it utilizes edge caching, serverless Postgres, and a stealthy Magic Link authentication portal for admins to access granular telemetry data.
 
