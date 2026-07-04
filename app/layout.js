@@ -7,6 +7,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://schoolofprompt.vercel.app"),
   title: "School of Prompt // Instant Developer & AI Prompt Sharing",
   description: "A lightning-fast text and developer prompt-sharing utility optimized for AI prompt engineers and software developers.",
   openGraph: {
