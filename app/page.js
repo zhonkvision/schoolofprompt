@@ -131,10 +131,16 @@ function DashboardContent() {
   // Analytics Tracking (Fire-and-forget)
   const trackEvent = (eventType) => {
     if (!activeId) return;
-    let sessionId = localStorage.getItem('promptshare_session_id');
-    if (!sessionId) {
-      sessionId = Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
-      localStorage.setItem('promptshare_session_id', sessionId);
+    let sessionId = 'anonymous';
+    try {
+      sessionId = localStorage.getItem('promptshare_session_id');
+      if (!sessionId) {
+        sessionId = Math.random().toString(36).substring(2, 15) + Date.now().toString(36);
+        localStorage.setItem('promptshare_session_id', sessionId);
+      }
+    } catch (e) {
+      // Browser blocks localStorage (e.g. strict private mode)
+      sessionId = 'private_session_' + Math.random().toString(36).substring(2, 15);
     }
     
     fetch('/api/track', {
