@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --glow-color: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  color: var(--foreground);
+  background-color: var(--background);
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
+/* Monospace Grid Background Effect with Subtle Yellow Focal Center Glow */
+.bg-grid {
+  background-image: 
+    radial-gradient(circle at center, rgba(255, 255, 0, 0.015) 0%, transparent 85%),
+    linear-gradient(rgba(255, 255, 255, 0.006) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.006) 1px, transparent 1px);
+  background-size: 100% 100%, 24px 24px, 24px 24px;
+}
+
+/* Custom Scrollbars - Extra Clean & Minimalist */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 0, 0.5);
+  box-shadow: 0 0 6px rgba(255, 255, 0, 0.4);
+}
+
+/* Premium text and border glows */
+.glow-text {
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+.glow-text-yellow {
+  text-shadow: 0 0 6px rgba(255, 255, 0, 0.4);
+}
+.glow-text-bright {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6), 0 0 16px rgba(255, 255, 255, 0.15);
+}
+.glow-border {
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Pulsing active dot indicator */
+@keyframes status-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+.pulse-dot {
+  animation: status-pulse 2s infinite ease-in-out;
+}
+
+/* Sleek Minimalist Terminal Button Micro-Interactions */
+.term-btn {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-mono), monospace;
+  text-transform: uppercase;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+.term-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+  transition: all 0.5s ease;
+}
+.term-btn:hover::before {
+  left: 100%;
+}
+.term-btn:hover:not(:disabled) {
+  border-color: #FFFF00;
+  color: #FFFF00;
+  box-shadow: 0 0 8px rgba(255, 255, 0, 0.25);
+  background: rgba(255, 255, 0, 0.04);
+}
+.term-btn:active:not(:disabled) {
+  background: rgba(255, 255, 0, 0.08);
+  transform: scale(0.98);
+}
+.term-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Custom Syntax Highlighting Styles (High-Contrast Slate/Amber Theme) */
+pre code.hljs {
+  padding: 0;
+  background: transparent;
+  color: #ffffff;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #64748b; /* Sleek slate comments */
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition,
+.hljs-doctag {
+  color: #FFFF00; /* Yellow highlights for keywords */
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-meta,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-link {
+  color: #fbbf24; /* Amber numbers & variables */
+}
+
+.hljs-string {
+  color: #a3e635; /* Vibrant lime-green strings */
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-class,
+.hljs-function {
+  color: #38bdf8; /* Sky blue functions & tags */
+  font-weight: bold;
+}
+
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #fb7185; /* Soft rose for builtins */
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-tag {
+  color: #cbd5e1; /* White/slate-grey variables */
+}
+
+.hljs-params,
+.hljs-attr {
+  color: #f472b6; /* Pink parameters */
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  color: #ff3333;
+  background-color: rgba(255, 0, 0, 0.08);
+}
